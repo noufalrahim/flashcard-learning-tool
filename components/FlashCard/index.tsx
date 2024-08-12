@@ -1,4 +1,5 @@
 import React from "react";
+import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
 
 interface FlashCardProps {
     subjectId: number;
@@ -37,7 +38,7 @@ export default function FlashCard({ subjectId,
   };
 
   return (
-    <div className="w-4/5 items-center flex flex-col justify-between flex">
+    <div className="lg:w-4/5 md:w-4/5 xl:w-4/5 w-full items-center flex flex-col justify-between flex min-h-screen">
       <div className="w-11/12 bg-gray-400 mt-10 rounded-full flex-row flex px-5 py-2 justify-center">
         <p className="text-center text-black">
           {
@@ -55,7 +56,7 @@ export default function FlashCard({ subjectId,
             }`}
           >
             <div className="absolute w-full h-full backface-hidden bg-gray-400 rounded-md flex justify-center items-center">
-              <p className="text-center text-black text-lg">
+              <p className="text-center text-black text-lg mx-5">
                 {filteredFlashCards[currentFlashCardIndex]?.question}
               </p>
             </div>
@@ -68,17 +69,17 @@ export default function FlashCard({ subjectId,
         </div>
       </div>
 
-      <div className="mb-5 w-11/12 flex flex-row justify-between px-10 gap-2">
+      <div className="mb-5 lg:w-11/12 md:w-11/12 xl:w-11/12 w-full flex flex-row justify-between px-10 gap-2">
         <div
-          className={`py-2 rounded-md px-5 bg-gray-800 cursor-pointer ${
+          className={`py-4 px-4 bg-gray-800 items-center flex justify-center text-center rounded-full cursor-pointer ${
             currentFlashCardIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
           }`}
           onClick={handlePrevious}
         >
-          <p className="text-white text-center">Previous</p>
+          <FaChevronCircleLeft color="white" size={20}/>
         </div>
         <div
-          className="py-2 rounded-md px-5 bg-gray-800 cursor-pointer"
+          className="py-2 rounded-xl px-5 bg-gray-800 items-center justify-center flex cursor-pointer"
           onClick={handleFlip}
         >
           <p className="text-white text-center">
@@ -86,14 +87,15 @@ export default function FlashCard({ subjectId,
           </p>
         </div>
         <div
-          className={`py-2 rounded-md px-5 bg-gray-800 cursor-pointer ${
+          className={`py-4 px-4 bg-gray-800 items-center flex justify-center text-center rounded-full cursor-pointer ${
             currentFlashCardIndex === filteredFlashCards.length - 1
               ? "opacity-50 cursor-not-allowed"
               : ""
           }`}
           onClick={handleNext}
         >
-          <p className="text-white text-center">Next</p>
+          {/* <p className="text-white text-center">Next</p> */}
+          <FaChevronCircleRight color="white" size={20}/>
         </div>
       </div>
 

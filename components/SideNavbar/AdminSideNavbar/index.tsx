@@ -4,7 +4,7 @@ export default function AdminSideNavBar({ setRenderComponent, renderComponent }:
     renderComponent: any
  }) {
     return (
-        <nav className="w-1/5 min-h-screen bg-gray-800">
+        <nav className="lg:w-1/5 md:w-1/5 xl:w-1/5 w-full min-h-screen bg-gray-800">
             <ul className="flex flex-col items-center">
                 <li className={`text-white p-2 text-center w-full cursor-pointer
                     ${renderComponent === 'flashcards' ? 'bg-gray-700' : ''}

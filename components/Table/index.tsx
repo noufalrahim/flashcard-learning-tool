@@ -54,7 +54,7 @@ export default function Table({
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 border-b border-black min-h-[27rem]">                
                 <thead className="text-xs text-white uppercase bg-[#1E293B] ">
                     {table.getHeaderGroups().map((headerGroup) => (
-                        <tr key={headerGroup.id} className='p-1 flex-row justify-center text-center items-center border border-gray-300'>
+                        <tr key={headerGroup.id} className='p-1  flex-row justify-center text-center items-center border border-gray-300'>
                             {headerGroup.headers.map((header) => (
                                 <th
                                     key={header.id}
@@ -97,7 +97,7 @@ export default function Table({
                                 <td 
                                 key={cell.id} 
                                 width={cell.column.getSize()} 
-                                className={`flex-col justify-center text-center border border-gray-300`}>
+                                className={`flex-col justify-center text-center border border-gray-300 px-5 py-2`}>
                                     {cell.column.columnDef.accessorKey === 'EDIT' ? (
                                         <div className='flex flex-row justify-between'>
                                             <span className='text-blue-500 cursor-pointer' onClick={() => handleEditRow(cell.row.original)}>

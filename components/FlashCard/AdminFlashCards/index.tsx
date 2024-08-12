@@ -35,7 +35,6 @@ export default function AdminFlashCards({ flashCards, subjects, setRefresh }:
     }, [searchQuery, flashCards]);
 
     const handleEditRow = async (row: any) => {
-        console.log(row);
         setShowEditModal({
             show: true,
             row,
@@ -74,7 +73,6 @@ export default function AdminFlashCards({ flashCards, subjects, setRefresh }:
             header: 'Subject',
             accessorKey: 'subject_id',
             cell: (info: any) => {
-                console.log(info);
                 return info.getValue();
             },
         },
@@ -95,7 +93,7 @@ export default function AdminFlashCards({ flashCards, subjects, setRefresh }:
     });
 
     return (
-        <div className='w-full'>
+        <div className='w-full gap-5 md:gap-0 lg:gap-0 xl:gap-0 flex flex-col'>
             <div className='mt-5'>
                 <h1 className='text-3xl text-center'>
                     Flash Cards
@@ -116,7 +114,7 @@ export default function AdminFlashCards({ flashCards, subjects, setRefresh }:
                     placeholder='Search Flash Cards'
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className='w-1/3 px-2 py-1 border border-gray-500 rounded focus:outline-none'
+                    className='w-full lg:w-1/3 md:w-1/3 xl:w-1/3 mx-5 py-1 border border-gray-500 rounded focus:outline-none'
                 />
             </div>
 

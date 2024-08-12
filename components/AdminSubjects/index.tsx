@@ -36,7 +36,7 @@ export default function AdminSubjects({ subjects, setRefresh }:
     ], []);
 
     return (
-        <div className='w-full'>
+        <div className='w-full gap-5 md:gap-0 lg:gap-0 xl:gap-0 flex flex-col'>
             <div className='mt-5'>
                 <h1 className='text-3xl text-center'>
                     Subjects
@@ -56,7 +56,7 @@ export default function AdminSubjects({ subjects, setRefresh }:
                     placeholder='Search Subjects'
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className='w-1/3 px-2 py-1 border border-gray-500 rounded focus:outline-none'
+                    className='w-full lg:w-1/3 md:w-1/3 xl:w-1/3 mx-5 mt-2 px-2 py-1 border border-gray-500 rounded focus:outline-none'
                 />
             </div>
 
